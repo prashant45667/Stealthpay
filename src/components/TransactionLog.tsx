@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BatchRecord } from '@/types';
-import { Layers, ShieldCheck, ExternalLink, Copy, Check, Lock, ChevronRight, Hash } from 'lucide-react';
+import { Layers, ShieldCheck, ExternalLink, Copy, Check, Lock, ChevronRight, Hash, Download } from 'lucide-react';
 
 interface TransactionLogProps {
   history: BatchRecord[];
@@ -15,6 +15,30 @@ export const TransactionLog: React.FC<TransactionLogProps> = ({ history }) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const handleExportCSV = () => {
+    const headers = ['Batch ID', 'Memo', 'Disbursed Pool (tDUST)', 'Recipients', 'Merkle Root', 'Block Height', 'Status', 'TX Hash', 'Timestamp'];
+    const rows = history.map((b) => [
+      b.batchId,
+      `"${b.memo || 'Stealth Payroll'}"`,
+      b.totalAmount,
+      b.recipientCount,
+      b.solvencyMerkleRoot,
+      b.blockHeight,
+      b.status,
+      b.txHash,
+      new Date(b.timestamp).toISOString(),
+    ]);
+
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map((e) => e.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `stealthpay_payroll_ledger_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -36,7 +60,15 @@ export const TransactionLog: React.FC<TransactionLogProps> = ({ history }) => {
           </p>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={handleExportCSV}
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-charcoal-950 hover:bg-charcoal-800 text-charcoal-300 hover:text-emerald-neon border border-charcoal-800 text-xs font-mono transition"
+            title="Export payroll receipts as CSV"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Export CSV</span>
+          </button>
           <span className="text-xs font-mono text-charcoal-500">
             Total Batches: <span className="text-white font-bold">{history.length}</span>
           </span>
