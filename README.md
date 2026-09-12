@@ -102,6 +102,18 @@ sequenceDiagram
     Preprod-->>Manager: 100% Solvency Confirmed (0 Salaries Leaked)
 ```
 
+### 👁️ Privacy Matrix: What an Observer Can and Cannot Learn
+
+| Data Element | Observer Visibility | Storage & Verification Layer | Privacy Mechanism |
+|---|---|---|---|
+| **Individual Recipient Addresses** | ❌ **Hidden (0% Disclosed)** | Local Witness Vector (`witness getRecipientAllocations()`) | Isolated in manager enclave, never broadcast to mempool |
+| **Individual Salary & Payout Amounts** | ❌ **Hidden (0% Disclosed)** | Shielded ZK Witness (`alloc.amount`) | Mathematical bounds verified in circuit without disclosure |
+| **Department Splits & Share %** | ❌ **Hidden (0% Disclosed)** | Client-side Session State | Encrypted and isolated in local enclave |
+| **Aggregate Disbursed Pool Sum** | ✅ **Publicly Disclosed** | Public Ledger (`treasuryVaultBalance`) | `disclose(poolAmount)` for verifiable vault debit |
+| **Solvency Proof Verification** | ✅ **Publicly Disclosed** | Midnight Preprod Consensus | Halo2 / PLONK proof proves $\sum \text{alloc}_i == \text{poolAmount}$ |
+| **Batch UUID & Transaction Hash** | ✅ **Publicly Disclosed** | On-Chain Batch Registry | `disclose(batchId)` for replay protection |
+| **Solvency Merkle Commitment Root** | ✅ **Publicly Disclosed** | Smart Contract Map State | `disclose(solvencyMerkleRoot)` for recipient verification |
+
 ---
 
 ## 🎨 UI Aesthetics & Features
