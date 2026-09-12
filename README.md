@@ -215,6 +215,20 @@ StealthPay includes 6 automated tests in `tests/stealth_pay.test.ts`:
 
 ---
 
+## 👤 Author & GitHub Details
+
+| Field | Details |
+|---|---|
+| **Author / Developer** | [Nitin Kapoor (nitinkapoor009988-cloud)](https://github.com/nitinkapoor009988-cloud) |
+| **GitHub Profile** | [https://github.com/nitinkapoor009988-cloud](https://github.com/nitinkapoor009988-cloud) |
+| **Project Repository** | [https://github.com/nitinkapoor009988-cloud/StealthPay](https://github.com/nitinkapoor009988-cloud/StealthPay) |
+| **Target Network** | Midnight Preprod Testnet |
+| **Contract Language** | Midnight Compact (`v0.20+`) |
+| **License** | MIT Open Source License |
+
+---
+
 ## 🛡️ License
 
-MIT License — Developed for the Midnight Network Ecosystem by **nitinkapoor009988-cloud**.
+MIT License — Developed for the Midnight Network Ecosystem by [nitinkapoor009988-cloud](https://github.com/nitinkapoor009988-cloud).
+
