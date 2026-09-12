@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { RecipientRow, PresetTemplate } from '@/types';
 import { PRESET_TEMPLATES } from '@/lib/presets';
 import { generateBytes32 } from '@/lib/midnight/stealth-service';
+import { formatNumber } from '@/lib/utils';
 import { 
   Lock, 
   Globe, 
@@ -355,10 +356,10 @@ export const DisbursementStudio: React.FC<DisbursementStudioProps> = ({
                   ? 'Cryptographic Solvency Satisfied: ∑(w_i) == Pool'
                   : 'Solvency Discrepancy Detected'}
               </div>
-              <p className="text-[11px] text-charcoal-500">
+              <p className="text-[11px] text-charcoal-500" suppressHydrationWarning>
                 {isSolvent
                   ? 'Private witness sum matches public pool. Zero-Knowledge proof will verify with 100% solvency.'
-                  : `Sum mismatch: Recipient allocations total ${calculatedSum.toLocaleString()} tDUST, but Disbursal Pool is ${poolAmount.toLocaleString()} tDUST (Delta: ${delta > 0 ? `+${delta}` : delta}).`}
+                  : `Sum mismatch: Recipient allocations total ${formatNumber(calculatedSum)} tDUST, but Disbursal Pool is ${formatNumber(poolAmount)} tDUST (Delta: ${delta > 0 ? `+${formatNumber(delta)}` : formatNumber(delta)}).`}
               </p>
             </div>
           </div>
@@ -366,12 +367,12 @@ export const DisbursementStudio: React.FC<DisbursementStudioProps> = ({
           <div className="flex items-center space-x-4 font-mono text-xs">
             <div className="text-right">
               <div className="text-[10px] text-charcoal-500">Witness Sum</div>
-              <div className="text-white font-bold">{calculatedSum.toLocaleString()} tDUST</div>
+              <div className="text-white font-bold" suppressHydrationWarning>{formatNumber(calculatedSum)} tDUST</div>
             </div>
             <div className="text-charcoal-600 font-bold">=</div>
             <div className="text-right">
               <div className="text-[10px] text-charcoal-500">Public Pool</div>
-              <div className="text-cyan-neon font-bold">{poolAmount.toLocaleString()} tDUST</div>
+              <div className="text-cyan-neon font-bold" suppressHydrationWarning>{formatNumber(poolAmount)} tDUST</div>
             </div>
           </div>
         </div>

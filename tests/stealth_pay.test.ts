@@ -41,7 +41,8 @@ describe('StealthPay Confidential Payroll Protocol Suite', () => {
       recipients,
       poolAmount,
       'Sprint 24 Stealth Settlement',
-      () => {}
+      () => {},
+      true
     );
 
     expect(record).toBeDefined();
@@ -68,7 +69,8 @@ describe('StealthPay Confidential Payroll Protocol Suite', () => {
       recipients,
       poolAmount,
       'DAO Strategic Grant',
-      () => {}
+      () => {},
+      true
     );
 
     // The public record must only expose aggregate metadata
@@ -95,7 +97,7 @@ describe('StealthPay Confidential Payroll Protocol Suite', () => {
     const recipients = createMockRecipients([10000, 20000]);
     const poolAmount = 30000;
 
-    await service.executeStealthPayout(recipients, poolAmount, 'Counter Test', () => {});
+    await service.executeStealthPayout(recipients, poolAmount, 'Counter Test', () => {}, true);
 
     const updatedState = service.getTreasuryState();
     const updatedHistory = service.getTransactionHistory();

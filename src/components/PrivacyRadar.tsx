@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { RecipientRow } from '@/types';
+import { formatNumber } from '@/lib/utils';
 import { Eye, EyeOff, Shield, Globe, Lock, ShieldCheck, Sparkles, Hash } from 'lucide-react';
 
 interface PrivacyRadarProps {
@@ -87,8 +88,8 @@ export const PrivacyRadar: React.FC<PrivacyRadarProps> = ({
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
               <div className="p-2.5 rounded-xl bg-charcoal-900 border border-charcoal-800">
                 <div className="text-[10px] text-charcoal-500">Disclosed Pool Sum</div>
-                <div className="text-sm font-bold text-white mt-0.5">
-                  {poolAmount.toLocaleString()} tDUST
+                <div className="text-sm font-bold text-white mt-0.5" suppressHydrationWarning>
+                  {formatNumber(poolAmount)} tDUST
                 </div>
               </div>
               <div className="p-2.5 rounded-xl bg-charcoal-900 border border-charcoal-800">
@@ -163,8 +164,8 @@ export const PrivacyRadar: React.FC<PrivacyRadarProps> = ({
               </div>
               <div className="p-2.5 rounded-xl bg-charcoal-900 border border-charcoal-800">
                 <div className="text-[10px] text-charcoal-500">Allocated Total</div>
-                <div className="text-sm font-bold text-emerald-neon mt-0.5">
-                  {poolAmount.toLocaleString()} tDUST
+                <div className="text-sm font-bold text-emerald-neon mt-0.5" suppressHydrationWarning>
+                  {formatNumber(poolAmount)} tDUST
                 </div>
               </div>
             </div>
@@ -187,7 +188,7 @@ export const PrivacyRadar: React.FC<PrivacyRadarProps> = ({
                         <div className="text-[10px] text-charcoal-500 font-mono">{r.department}</div>
                       </div>
                       <div className="text-right font-mono">
-                        <div className="text-emerald-neon font-bold">{r.amount.toLocaleString()} tDUST</div>
+                        <div className="text-emerald-neon font-bold" suppressHydrationWarning>{formatNumber(r.amount)} tDUST</div>
                         <div className="text-[10px] text-charcoal-500">{pct}% split</div>
                       </div>
                     </div>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { WalletAccount } from '@/types';
 import { midnightConnector } from '@/lib/midnight/connector';
+import { formatNumber } from '@/lib/utils';
 import { Shield, Wallet, ChevronDown, Copy, Check, ExternalLink, Activity, Sparkles, RefreshCw } from 'lucide-react';
 
 interface HeaderProps {
@@ -89,15 +90,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDeposit, vaultBalance }) =
             <span className="text-emerald-neon font-mono font-medium">Midnight Preprod</span>
             <span className="text-charcoal-600">|</span>
             <span className="text-charcoal-500">Block</span>
-            <span className="text-white font-mono">#{blockHeight.toLocaleString()}</span>
+            <span className="text-white font-mono" suppressHydrationWarning>#{formatNumber(blockHeight)}</span>
           </div>
 
           {/* Quick Treasury Vault Pill */}
           <div className="flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-charcoal-900/90 border border-emerald-dark/60 text-xs">
             <Sparkles className="w-3.5 h-3.5 text-cyan-neon" />
             <span className="text-charcoal-500">Treasury Vault:</span>
-            <span className="text-emerald-neon font-mono font-bold">
-              {vaultBalance.toLocaleString()} tDUST
+            <span className="text-emerald-neon font-mono font-bold" suppressHydrationWarning>
+              {formatNumber(vaultBalance)} tDUST
             </span>
             <button
               onClick={onOpenDeposit}
@@ -156,14 +157,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDeposit, vaultBalance }) =
                     <div className="grid grid-cols-2 gap-2 pt-1">
                       <div className="p-2.5 rounded-lg bg-charcoal-950/80 border border-charcoal-800">
                         <div className="text-[10px] text-charcoal-500">tDUST Balance</div>
-                        <div className="text-sm font-bold font-mono text-emerald-neon mt-0.5">
-                          {account.balance.toLocaleString()}
+                        <div className="text-sm font-bold font-mono text-emerald-neon mt-0.5" suppressHydrationWarning>
+                          {formatNumber(account.balance)}
                         </div>
                       </div>
                       <div className="p-2.5 rounded-lg bg-charcoal-950/80 border border-charcoal-800">
                         <div className="text-[10px] text-charcoal-500">NIGHT Balance</div>
-                        <div className="text-sm font-bold font-mono text-cyan-neon mt-0.5">
-                          {account.dustBalance.toLocaleString()}
+                        <div className="text-sm font-bold font-mono text-cyan-neon mt-0.5" suppressHydrationWarning>
+                          {formatNumber(account.dustBalance)}
                         </div>
                       </div>
                     </div>

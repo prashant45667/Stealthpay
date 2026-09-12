@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { BatchRecord } from '@/types';
+import { formatNumber } from '@/lib/utils';
 import { Layers, ShieldCheck, ExternalLink, Copy, Check, Lock, ChevronRight, Hash, Download } from 'lucide-react';
 
 interface TransactionLogProps {
@@ -127,8 +128,8 @@ export const TransactionLog: React.FC<TransactionLogProps> = ({ history }) => {
 
                   {/* Disbursed Amount */}
                   <td className="py-3.5 px-4">
-                    <div className="text-white font-bold">
-                      {batch.totalAmount.toLocaleString()} tDUST
+                    <div className="text-white font-bold" suppressHydrationWarning>
+                      {formatNumber(batch.totalAmount)} tDUST
                     </div>
                     <div className="text-[10px] text-emerald-neon">100% Solvency</div>
                   </td>
@@ -146,8 +147,8 @@ export const TransactionLog: React.FC<TransactionLogProps> = ({ history }) => {
                   </td>
 
                   {/* Block Height */}
-                  <td className="py-3.5 px-4 text-charcoal-500">
-                    #{batch.blockHeight.toLocaleString()}
+                  <td className="py-3.5 px-4 text-charcoal-500" suppressHydrationWarning>
+                    #{formatNumber(batch.blockHeight)}
                   </td>
 
                   {/* Status Badge */}

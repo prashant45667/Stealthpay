@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { formatNumber } from '@/lib/utils';
 import { Vault, ArrowUpRight, X, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface DepositModalProps {
@@ -65,7 +66,7 @@ export const DepositModal: React.FC<DepositModalProps> = ({
         <form onSubmit={handleSubmit} className="space-y-4 my-6">
           <div className="p-3.5 rounded-2xl bg-charcoal-950 border border-charcoal-800 flex items-center justify-between text-xs font-mono">
             <span className="text-charcoal-500">Current Vault Liquidity:</span>
-            <span className="text-emerald-neon font-bold">{currentBalance.toLocaleString()} tDUST</span>
+            <span className="text-emerald-neon font-bold" suppressHydrationWarning>{formatNumber(currentBalance)} tDUST</span>
           </div>
 
           <div className="space-y-2">

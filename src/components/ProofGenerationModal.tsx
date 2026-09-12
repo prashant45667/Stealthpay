@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { ProofStep } from '@/types';
+import { formatNumber } from '@/lib/utils';
 import confetti from 'canvas-confetti';
 import { 
   ShieldCheck, 
@@ -99,7 +100,7 @@ export const ProofGenerationModal: React.FC<ProofGenerationModalProps> = ({
         <div className="my-5 p-4 rounded-2xl bg-charcoal-950/80 border border-charcoal-800 flex items-center justify-between text-xs font-mono">
           <div>
             <span className="text-charcoal-500">Target Disbursal Pool:</span>
-            <span className="ml-2 text-white font-bold">{poolAmount?.toLocaleString()} tDUST</span>
+            <span className="ml-2 text-white font-bold" suppressHydrationWarning>{formatNumber(poolAmount)} tDUST</span>
           </div>
           <div>
             <span className="text-charcoal-500">Recipients:</span>

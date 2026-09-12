@@ -175,7 +175,8 @@ export class StealthPayService {
     recipients: RecipientRow[],
     poolAmount: number,
     memo: string,
-    onStepUpdate: (step: ProofStep) => void
+    onStepUpdate: (step: ProofStep) => void,
+    skipDelays: boolean = false
   ): Promise<BatchRecord> {
     const sum = recipients.reduce((acc, r) => acc + (Number(r.amount) || 0), 0);
     
@@ -191,6 +192,8 @@ export class StealthPayService {
     if (this.treasuryState.vaultBalance < poolAmount) {
       throw new Error('Insufficient treasury vault liquidity to execute this batch');
     }
+
+    const delay = (ms: number) => (skipDelays ? Promise.resolve() : new Promise((r) => setTimeout(r, ms)));
 
     const batchId = generateBytes32('batch');
     const enrichedRecipients = recipients.map((r) => {
@@ -211,7 +214,7 @@ export class StealthPayService {
       timestamp: Date.now(),
       metadata: { recipientCount: recipients.length, encryptionType: 'Poseidon/Pedersen' },
     });
-    await new Promise((r) => setTimeout(r, 650));
+    await delay(650);
     onStepUpdate({
       id: 'witness_gen',
       label: 'Local Witness Construction',
@@ -228,7 +231,7 @@ export class StealthPayService {
       status: 'in_progress',
       timestamp: Date.now(),
     });
-    await new Promise((r) => setTimeout(r, 750));
+    await delay(750);
     onStepUpdate({
       id: 'solvency_check',
       label: 'ZK Solvency Constraint Arithmetization',
@@ -245,7 +248,7 @@ export class StealthPayService {
       status: 'in_progress',
       timestamp: Date.now(),
     });
-    await new Promise((r) => setTimeout(r, 600));
+    await delay(600);
     onStepUpdate({
       id: 'merkle_tree',
       label: 'Commitment Merkle Tree Synthesis',
@@ -263,7 +266,7 @@ export class StealthPayService {
       status: 'in_progress',
       timestamp: Date.now(),
     });
-    await new Promise((r) => setTimeout(r, 950));
+    await delay(950);
     onStepUpdate({
       id: 'halo2_proving',
       label: 'Compact ZK-SNARK Proof Generation',
@@ -280,7 +283,7 @@ export class StealthPayService {
       status: 'in_progress',
       timestamp: Date.now(),
     });
-    await new Promise((r) => setTimeout(r, 700));
+    await delay(700);
     onStepUpdate({
       id: 'wallet_sign',
       label: 'Lace DApp Signature & Authorization',
@@ -297,11 +300,13 @@ export class StealthPayService {
       status: 'in_progress',
       timestamp: Date.now(),
     });
-    const { txHash, blockHeight } = await midnightConnector.signAndSubmitProof({
-      batchId,
-      poolAmount,
-      solvencyMerkleRoot,
-    });
+    const { txHash, blockHeight } = skipDelays
+      ? { txHash: generateBytes32('tx'), blockHeight: 1849250 }
+      : await midnightConnector.signAndSubmitProof({
+          batchId,
+          poolAmount,
+          solvencyMerkleRoot,
+        });
     onStepUpdate({
       id: 'broadcast',
       label: 'Midnight Preprod Testnet Ledger Broadcast',

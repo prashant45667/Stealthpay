@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { TreasuryState } from '@/types';
+import { formatNumber } from '@/lib/utils';
 import { Vault, ShieldCheck, ArrowUpRight, Zap, Layers, Lock, Cpu } from 'lucide-react';
 
 interface TreasuryPoolCardProps {
@@ -40,8 +41,8 @@ export const TreasuryPoolCard: React.FC<TreasuryPoolCardProps> = ({
           </div>
 
           <div className="flex items-baseline space-x-3">
-            <span className="text-4xl sm:text-5xl font-extrabold font-mono text-white tracking-tight">
-              {treasury.vaultBalance.toLocaleString()}
+            <span className="text-4xl sm:text-5xl font-extrabold font-mono text-white tracking-tight" suppressHydrationWarning>
+              {formatNumber(treasury.vaultBalance)}
             </span>
             <span className="text-xl font-bold font-mono text-emerald-neon">tDUST</span>
           </div>
@@ -74,8 +75,8 @@ export const TreasuryPoolCard: React.FC<TreasuryPoolCardProps> = ({
               <span className="text-[11px] font-medium text-charcoal-500">All-Time Disbursed</span>
               <ShieldCheck className="w-4 h-4 text-emerald-neon" />
             </div>
-            <div className="text-xl font-bold font-mono text-white">
-              {treasury.totalHistoricalDisbursed.toLocaleString()}
+            <div className="text-xl font-bold font-mono text-white" suppressHydrationWarning>
+              {formatNumber(treasury.totalHistoricalDisbursed)}
             </div>
             <div className="text-[10px] text-emerald-neon font-mono">
               100% ZK-Shielded
@@ -88,8 +89,8 @@ export const TreasuryPoolCard: React.FC<TreasuryPoolCardProps> = ({
               <span className="text-[11px] font-medium text-charcoal-500">Batches Settled</span>
               <Layers className="w-4 h-4 text-cyan-neon" />
             </div>
-            <div className="text-xl font-bold font-mono text-white">
-              {treasury.batchCount} Batches
+            <div className="text-xl font-bold font-mono text-white" suppressHydrationWarning>
+              {formatNumber(treasury.batchCount)} Batches
             </div>
             <div className="text-[10px] text-cyan-neon font-mono">
               0 Leaked Salaries
