@@ -49,7 +49,15 @@ export const ProofGenerationModal: React.FC<ProofGenerationModalProps> = ({
         colors: ['#00FF9D', '#00E5FF', '#70FFBE', '#FFFFFF'],
       });
     }
-  }, [isComplete]);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && (isComplete || error)) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isComplete, error, onClose]);
 
   if (!isOpen) return null;
 
