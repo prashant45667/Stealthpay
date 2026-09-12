@@ -99,6 +99,18 @@ export const DisbursementStudio: React.FC<DisbursementStudioProps> = ({
     setPoolAmount(calculatedSum);
   };
 
+  const handleEqualSplit = () => {
+    if (recipients.length === 0 || poolAmount <= 0) return;
+    const baseShare = Math.floor(poolAmount / recipients.length);
+    const remainder = poolAmount % recipients.length;
+    setRecipients((prev) =>
+      prev.map((r, idx) => ({
+        ...r,
+        amount: idx === 0 ? baseShare + remainder : baseShare,
+      }))
+    );
+  };
+
   return (
     <div className="rounded-3xl bg-charcoal-900/90 border border-charcoal-700/70 p-6 lg:p-8 shadow-2xl backdrop-blur-xl space-y-6">
       
@@ -205,14 +217,24 @@ export const DisbursementStudio: React.FC<DisbursementStudioProps> = ({
             </span>
           </div>
 
-          <button
-            onClick={handleAddRecipient}
-            disabled={recipients.length >= 8}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-emerald-neon/15 hover:bg-emerald-neon/25 text-emerald-neon text-xs font-semibold border border-emerald-neon/30 transition disabled:opacity-40"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            <span>Add Recipient</span>
-          </button>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={handleEqualSplit}
+              type="button"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-charcoal-900 hover:bg-charcoal-800 text-charcoal-300 hover:text-cyan-neon text-xs font-semibold border border-charcoal-750 transition"
+              title="Split pool amount equally across all recipients"
+            >
+              <span>Split Equally</span>
+            </button>
+            <button
+              onClick={handleAddRecipient}
+              disabled={recipients.length >= 8}
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-emerald-neon/15 hover:bg-emerald-neon/25 text-emerald-neon text-xs font-semibold border border-emerald-neon/30 transition disabled:opacity-40"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>Add Recipient</span>
+            </button>
+          </div>
         </div>
 
         {/* Table Content */}
