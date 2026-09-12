@@ -2,10 +2,13 @@
 
 > **Production-Grade, Level-3 Compliant Confidential Payroll & Multi-Party Revenue Split dApp** powered by **Midnight Network Compact Smart Contracts**, **Zero-Knowledge Solvency Proofs**, and **Lace Wallet Connector**.
 
-[![Midnight Preprod](https://img.shields.io/badge/Network-Midnight%20Preprod-00FF9D?style=for-the-badge&logo=shield)](https://midnight.network)
-[![Compact Circuit](https://img.shields.io/badge/Smart%20Contract-Compact%20v0.20-00E5FF?style=for-the-badge)](https://docs.midnight.network)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-stealth--pay--flame.vercel.app-00FF9D?style=for-the-badge&logo=vercel)](https://stealth-pay-flame.vercel.app/)
+[![Midnight Preprod](https://img.shields.io/badge/Network-Midnight%20Preprod-00E5FF?style=for-the-badge&logo=shield)](https://midnight.network)
+[![Compact Circuit](https://img.shields.io/badge/Smart%20Contract-Compact%20v0.20-70FFBE?style=for-the-badge)](https://docs.midnight.network)
 [![Level 3 Compliant](https://img.shields.io/badge/Compliance-Level%203%20dApp-05DF85?style=for-the-badge)](https://midnight.network)
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20Passing-success?style=for-the-badge&logo=githubactions)](https://github.com/nitinkapoor009988-cloud)
+
+> 🚀 **Live dApp Website**: **[https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/)**
 
 ---
 
@@ -14,6 +17,7 @@
 | Parameter | Value |
 |---|---|
 | **Contract Name** | `StealthPayProtocol` |
+| **Live Web Application** | **[https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/)** |
 | **Contract ID (Hex)** | `0x8f1a2e9d0c3b4a5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e` |
 | **Bech32 Contract Address** | `mn_contract_preprod1qz7x8k2w9d3v4f5u6t7g8h9j0k1l2m3n4p5q6r7s8t9u0v` |
 | **Target Network** | Midnight Preprod Testnet |
@@ -255,6 +259,7 @@ StealthPay includes a comprehensive Vitest automated test suite verifying all Co
 | **Author / Developer** | [Nitin Kapoor (nitinkapoor009988-cloud)](https://github.com/nitinkapoor009988-cloud) |
 | **GitHub Profile** | [https://github.com/nitinkapoor009988-cloud](https://github.com/nitinkapoor009988-cloud) |
 | **Project Repository** | [https://github.com/nitinkapoor009988-cloud/StealthPay](https://github.com/nitinkapoor009988-cloud/StealthPay) |
+| **Live Web App (Vercel)** | [https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/) |
 | **Target Network** | Midnight Preprod Testnet |
 | **Contract Language** | Midnight Compact (`v0.20+`) |
 | **License** | MIT Open Source License |
