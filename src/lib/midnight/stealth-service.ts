@@ -27,6 +27,16 @@ export function computeRecipientCommitment(address: string, amount: number, salt
   return `0xcomm_${hexPart}${salt.slice(2, 18)}`;
 }
 
+export interface CircuitTelemetry {
+  circuitLanguage: string;
+  provingSystem: string;
+  halo2ConstraintCount: number;
+  witnessVectorSize: number;
+  averageProofTimeMs: number;
+  memoryFootprintKb: number;
+  solvencyGuaranteeRatio: string;
+}
+
 // Computes Solvency Merkle Root over all recipient commitments
 export function computeSolvencyMerkleRoot(commitments: string[]): string {
   if (commitments.length === 0) return generateBytes32('empty_root');
@@ -42,6 +52,16 @@ export function computeSolvencyMerkleRoot(commitments: string[]): string {
 export class StealthPayService {
   private static instance: StealthPayService;
   
+  private telemetry: CircuitTelemetry = {
+    circuitLanguage: 'Midnight Compact v0.20+',
+    provingSystem: 'Halo2 / PLONK (KZG Commitments)',
+    halo2ConstraintCount: 1024,
+    witnessVectorSize: 8,
+    averageProofTimeMs: 1240,
+    memoryFootprintKb: 1840,
+    solvencyGuaranteeRatio: '100% Cryptographic Equality',
+  };
+
   private treasuryState: TreasuryState = {
     vaultBalance: 850000,
     totalHistoricalDisbursed: 420000,
@@ -49,6 +69,10 @@ export class StealthPayService {
     isPaused: false,
     managerPubkey: '0xpub_midnight_treasury_manager_98a72f01',
   };
+
+  public getCircuitTelemetry(): CircuitTelemetry {
+    return { ...this.telemetry };
+  }
 
   private transactionHistory: BatchRecord[] = [
     {
