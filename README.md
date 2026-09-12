@@ -73,15 +73,27 @@ StealthPay operates on a dual-state architecture enabled by Midnight's Compact l
 +-------------------------------------------------------------------------------+
 ```
 
-### Deliberate Use of `disclose()`
-In `contracts/stealth_pay.compact`, the `disclose()` operator is restricted strictly to:
-1. `publicBatchId`: Unique identifier for replay protection.
-2. `publicPoolAmount`: Aggregate disbursed amount subtracted from the public treasury vault.
-3. `publicRecipientCount`: Total vector elements processed.
-4. `publicMerkleRoot`: Merkle accumulator over recipient commitments.
-5. `publicTimestamp`: Ledger timestamp for financial audit logs.
+### 🔄 End-to-End ZK Payroll Lifecycle
 
-Individual recipient parameters (`address`, `amount`, `salt`) **never pass through `disclose()`**, guaranteeing mathematical privacy.
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Manager as 🛡️ Treasury Manager
+    participant Studio as 💻 Stealth Studio UI
+    participant Circuit as ⚡ Compact ZK Circuit
+    participant Wallet as 🔑 Lace Midnight Wallet
+    participant Preprod as 🌐 Midnight Preprod Ledger
+
+    Manager->>Studio: Input Private Recipient Allocations & Pool Amount
+    Studio->>Circuit: Synthesize Local Witness Vectors (alloc_i, salt_i)
+    Note over Circuit: Check bounds: alloc_i > 0<br/>Verify equality: ∑(alloc_i) == PoolAmount
+    Circuit-->>Studio: Zero-Knowledge Halo2 Proof Generated
+    Studio->>Wallet: Prompt DApp Transaction Signature
+    Wallet-->>Studio: Manager Signature Authorized
+    Studio->>Preprod: Submit Proof Tx with disclose(PoolAmount, BatchID, Root)
+    Preprod->>Preprod: Verify Proof & Transition Ledger State
+    Preprod-->>Manager: 100% Solvency Confirmed (0 Salaries Leaked)
+```
 
 ---
 
