@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
+import { FinTechShowcase } from '@/components/FinTechShowcase';
 import { TreasuryPoolCard } from '@/components/TreasuryPoolCard';
 import { DisbursementStudio } from '@/components/DisbursementStudio';
 import { PrivacyRadar } from '@/components/PrivacyRadar';
@@ -20,12 +21,7 @@ import {
   Github, 
   ExternalLink, 
   Lock, 
-  ArrowUpRight, 
-  Sparkles,
-  CheckCircle2,
-  ChevronRight,
-  ShieldCheck,
-  Flame
+  ChevronRight
 } from 'lucide-react';
 
 export default function Home() {
@@ -109,10 +105,26 @@ export default function Home() {
     }
   };
 
+  const scrollToStudio = () => {
+    setActiveTab('studio');
+    const el = document.getElementById('studio-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToCircuit = () => {
+    setActiveTab('circuit');
+    const el = document.getElementById('studio-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-onyx-950 text-white selection:bg-emerald-neon selection:text-onyx-950 overflow-x-hidden">
       
-      {/* Top Floating Header */}
+      {/* Top Floating Glass Header */}
       <Header
         onOpenDeposit={() => setIsDepositOpen(true)}
         vaultBalance={treasuryState.vaultBalance}
@@ -121,80 +133,27 @@ export default function Home() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-10">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-16">
         
-        {/* Hero Section */}
-        <section className="relative pt-6 sm:pt-12 pb-8 sm:pb-12 text-center max-w-4xl mx-auto flex flex-col items-center">
-          
-          {/* Ambient Glow Pedestal Behind Hero */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[540px] h-[240px] bg-radial-pedestal pointer-events-none -z-10" />
+        {/* 1:1 UI Reference Showcase (Hero Pedestal, Split Wealth Section & Bento Cards) */}
+        <FinTechShowcase
+          onLaunchStudio={scrollToStudio}
+          onInspectCircuit={scrollToCircuit}
+          vaultBalance={treasuryState.vaultBalance}
+        />
 
-          {/* Pill Badge */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-onyx-900/80 border border-white/10 text-xs font-mono text-onyx-300 shadow-sm backdrop-blur-md mb-6 hover:border-emerald-neon/30 transition">
-            <span className="text-emerald-neon text-xs">✦</span>
-            <span className="tracking-wide uppercase text-[11px] font-semibold text-onyx-200">
-              Midnight Protocol Level-3 Compliant
+        {/* Section Divider with Protocol Status */}
+        <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-neon animate-pulse" />
+            <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+              Midnight Compact ZK Protocol Studio
             </span>
           </div>
-
-          {/* Main Hero Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.15] text-gradient-silver">
-            Where Digital Finance Finds Sanctuary Online.
-          </h1>
-
-          {/* Hero Subtitle */}
-          <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-onyx-300 max-w-2xl font-sans font-normal leading-relaxed">
-            Distribute enterprise salaries, DAO contributor payouts, and confidential splits with zero financial surveillance. Mathematical solvency proofs verified by Midnight Network Compact ZK circuits.
-          </p>
-
-          {/* Hero CTAs */}
-          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
-            <button
-              onClick={() => {
-                setActiveTab('studio');
-                const el = document.getElementById('studio-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-6 py-3 rounded-full bg-white text-onyx-950 font-semibold text-sm hover:bg-neutral-200 transition shadow-lg hover:shadow-xl flex items-center space-x-2 group"
-            >
-              <span>Launch Stealth Studio</span>
-              <ChevronRight className="w-4 h-4 text-onyx-950 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-
-            <button
-              onClick={() => setActiveTab('circuit')}
-              className="px-6 py-3 rounded-full bg-onyx-900/90 border border-white/10 hover:border-white/20 text-white font-mono text-sm transition hover:bg-onyx-850 flex items-center space-x-2"
-            >
-              <Cpu className="w-4 h-4 text-emerald-neon" />
-              <span>Inspect ZK Circuit</span>
-            </button>
-          </div>
-
-          {/* Ecosystem Trust Bar */}
-          <div className="mt-12 sm:mt-16 w-full pt-6 border-t border-white/5 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-[11px] font-mono text-onyx-400 tracking-wider uppercase">
-            <span className="flex items-center space-x-1.5 hover:text-white transition">
-              <span className="text-emerald-neon">●</span>
-              <span>Midnight Network</span>
-            </span>
-            <span className="flex items-center space-x-1.5 hover:text-white transition">
-              <span className="text-cyan-neon">●</span>
-              <span>Lace Wallet DApp</span>
-            </span>
-            <span className="flex items-center space-x-1.5 hover:text-white transition">
-              <span className="text-white">●</span>
-              <span>Compact v0.20</span>
-            </span>
-            <span className="flex items-center space-x-1.5 hover:text-white transition">
-              <span className="text-emerald-neon">●</span>
-              <span>Halo2 / PLONK ZK</span>
-            </span>
-            <span className="flex items-center space-x-1.5 hover:text-white transition">
-              <span className="text-cyan-neon">●</span>
-              <span>Preprod Testnet</span>
-            </span>
-          </div>
-
-        </section>
+          <span className="hidden sm:inline text-xs font-mono text-onyx-500">
+            Halo2 Solvency Enclave Engine
+          </span>
+        </div>
 
         {/* Treasury Vault & Solvency Bento Overview */}
         <div id="vault-overview">
@@ -204,54 +163,54 @@ export default function Home() {
           />
         </div>
 
-        {/* Navigation Tabs Bar for Mobile / Tablet */}
-        <div className="flex md:hidden items-center space-x-2 overflow-x-auto pb-2 scrollbar-thin">
+        {/* Navigation Tabs Bar for Quick Switch */}
+        <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-thin">
           <button
             onClick={() => setActiveTab('studio')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
+            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
               activeTab === 'studio'
-                ? 'bg-white text-onyx-950 font-bold'
-                : 'bg-onyx-900 text-onyx-400 border border-white/5'
+                ? 'bg-white text-onyx-950 font-bold shadow-lg'
+                : 'bg-onyx-900 text-onyx-400 border border-white/5 hover:text-white'
             }`}
           >
             <Zap className="w-3.5 h-3.5" />
-            <span>Studio</span>
+            <span>1. Stealth Studio</span>
           </button>
 
           <button
             onClick={() => setActiveTab('radar')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
+            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
               activeTab === 'radar'
-                ? 'bg-white text-onyx-950 font-bold'
-                : 'bg-onyx-900 text-onyx-400 border border-white/5'
+                ? 'bg-white text-onyx-950 font-bold shadow-lg'
+                : 'bg-onyx-900 text-onyx-400 border border-white/5 hover:text-white'
             }`}
           >
             <Shield className="w-3.5 h-3.5" />
-            <span>Privacy Radar</span>
+            <span>2. Privacy Radar</span>
           </button>
 
           <button
             onClick={() => setActiveTab('circuit')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
+            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
               activeTab === 'circuit'
-                ? 'bg-white text-onyx-950 font-bold'
-                : 'bg-onyx-900 text-onyx-400 border border-white/5'
+                ? 'bg-white text-onyx-950 font-bold shadow-lg'
+                : 'bg-onyx-900 text-onyx-400 border border-white/5 hover:text-white'
             }`}
           >
             <Cpu className="w-3.5 h-3.5" />
-            <span>ZK Circuit</span>
+            <span>3. ZK Circuit Inspector</span>
           </button>
 
           <button
             onClick={() => setActiveTab('history')}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
+            className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium transition whitespace-nowrap ${
               activeTab === 'history'
-                ? 'bg-white text-onyx-950 font-bold'
-                : 'bg-onyx-900 text-onyx-400 border border-white/5'
+                ? 'bg-white text-onyx-950 font-bold shadow-lg'
+                : 'bg-onyx-900 text-onyx-400 border border-white/5 hover:text-white'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>Ledger ({history.length})</span>
+            <span>4. Ledger History ({history.length})</span>
           </button>
         </div>
 
@@ -304,7 +263,7 @@ export default function Home() {
 
       </main>
 
-      {/* Luxury Footer */}
+      {/* Luxury Dark Footer */}
       <footer className="border-t border-white/5 bg-onyx-950/80 backdrop-blur-md py-10 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-onyx-400">
           
