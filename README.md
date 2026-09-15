@@ -21,12 +21,11 @@
 | **Contract Name** | `StealthPayProtocol` |
 | **Live Web Application** | **[https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/)** |
 | **Demo Video Walkthrough** | **[https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69)** |
-| **Contract ID (Hex)** | `0x8f1a2e9d0c3b4a5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e` |
-| **Bech32 Contract Address** | `mn_contract_preprod1qz7x8k2w9d3v4f5u6t7g8h9j0k1l2m3n4p5q6r7s8t9u0v` |
-| **Target Network** | Midnight Preprod Testnet |
-| **Smart Contract Language** | **Midnight Compact (`v0.20+`)** |
+| **Contract Address (Preprod)** | [`c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9`](https://preprod.midnight.network/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |
+| **Target Network** | **Midnight Preprod Testnet** |
+| **Smart Contract Language** | **Midnight Compact (`v0.20+ / v0.31+`)** |
 | **ZK Proving Engine** | Halo2 / PLONK Zero-Knowledge Prover |
-| **Explorer Verification** | [View Contract on Midnight Preprod Explorer](https://preprod.midnight.network) |
+| **Explorer Verification** | **[View Verified Contract on Midnight Preprod Explorer](https://preprod.midnight.network/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)** |
 
 ---
 
