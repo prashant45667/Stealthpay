@@ -39,13 +39,20 @@ import {
   NoOpTransactionHistoryStorage,
 } from '@midnight-ntwrk/wallet-sdk';
 import * as crypto from 'node:crypto';
+import { mnemonicToEntropy } from '@scure/bip39';
+import { wordlist } from '@scure/bip39/wordlists/english.js';
 
 export function normalizeSeedToHex(inputSeed: string): string {
   const trimmed = inputSeed.trim();
   if (/^[0-9a-fA-F]{64}$/.test(trimmed)) {
     return trimmed;
   }
-  return crypto.createHash('sha256').update(trimmed.normalize('NFKD')).digest('hex');
+  try {
+    const entropy = mnemonicToEntropy(trimmed, wordlist);
+    return Buffer.from(entropy).toString('hex');
+  } catch {
+    return crypto.createHash('sha256').update(trimmed.normalize('NFKD')).digest('hex');
+  }
 }
 
 type UnshieldedKeystore = {
