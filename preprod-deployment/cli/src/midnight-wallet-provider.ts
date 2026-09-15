@@ -38,6 +38,15 @@ import {
   createKeystore,
   NoOpTransactionHistoryStorage,
 } from '@midnight-ntwrk/wallet-sdk';
+import * as crypto from 'node:crypto';
+
+export function normalizeSeedToHex(inputSeed: string): string {
+  const trimmed = inputSeed.trim();
+  if (/^[0-9a-fA-F]{64}$/.test(trimmed)) {
+    return trimmed;
+  }
+  return crypto.createHash('sha256').update(trimmed.normalize('NFKD')).digest('hex');
+}
 
 type UnshieldedKeystore = {
   getPublicKey(): unknown;
@@ -138,7 +147,8 @@ export class MidnightWalletProvider implements MidnightProvider, WalletProvider 
       },
     };
 
-    const seeds = seed ? WalletSeeds.fromMasterSeed(seed) : WalletSeeds.generateRandom();
+    const effectiveSeed = seed ? normalizeSeedToHex(seed) : undefined;
+    const seeds = effectiveSeed ? WalletSeeds.fromMasterSeed(effectiveSeed) : WalletSeeds.generateRandom();
     const keystore = createKeystore(seeds.unshielded, env.walletNetworkId as any);
 
     const unshieldedWallet = WalletFactory.createUnshieldedWallet(walletConfig as any, keystore);
