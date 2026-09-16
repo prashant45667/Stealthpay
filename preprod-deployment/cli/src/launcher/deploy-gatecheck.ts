@@ -154,13 +154,14 @@ async function main() {
     console.log("🎉 SUCCESS! CONTRACT DEPLOYED TO PREPROD!");
     console.log("CONTRACT_ADDRESS=" + contractAddress);
     console.log("Contract Address:", contractAddress);
-    console.log("Explorer:", `https://preprod.midnightexplorer.com/contract/${contractAddress}`);
+    const formattedAddress = contractAddress.startsWith('0x') ? contractAddress : `0x${contractAddress}`;
+    console.log("Explorer:", `https://preprod.midnightexplorer.com/contracts/${formattedAddress}`);
     console.log("================================================================================");
 
     const deploymentInfo = {
       network: "preprod",
       contractAddress,
-      explorerUrl: `https://preprod.midnightexplorer.com/contract/${contractAddress}`,
+      explorerUrl: `https://preprod.midnightexplorer.com/contracts/${formattedAddress}`,
       indexer: envConfiguration.indexer,
       node: envConfiguration.node,
       deployedAt: new Date().toISOString(),
