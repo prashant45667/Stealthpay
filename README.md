@@ -283,7 +283,7 @@ Every commit and pull request triggers an automated GitHub Actions pipeline (`.g
 |---|---|
 | **Author / Developer** | [prashant45667](https://github.com/prashant45667) |
 | **GitHub Profile** | [https://github.com/prashant45667](https://github.com/prashant45667) |
-| **Project Repository** | [https://github.com/prashant45667/StealthPay](https://github.com/prashant45667/StealthPay) |
+| **Project Repository** | [https://github.com/prashant45667/Stealthpay](https://github.com/prashant45667/Stealthpay) |
 | **Live Web App (Vercel)** | [https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/) |
 | **Demo Video Walkthrough** | [https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69) |
 | **Target Network** | Midnight Preprod Testnet |
@@ -295,5 +295,6 @@ Every commit and pull request triggers an automated GitHub Actions pipeline (`.g
 ## 🛡️ License
 
 MIT License — Developed for the Midnight Network Ecosystem by [prashant45667](https://github.com/prashant45667).
+
 
 
