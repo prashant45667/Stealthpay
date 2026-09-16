@@ -278,7 +278,7 @@ export default function Home() {
 
           <div className="flex items-center space-x-6">
             <a
-              href="https://github.com/nitinkapoor009988-cloud/StealthPay"
+              href="https://github.com/prashant45667/StealthPay"
               target="_blank"
               rel="noreferrer"
               className="hover:text-emerald-neon flex items-center space-x-1.5 transition text-onyx-300"

@@ -7,7 +7,7 @@
 [![Midnight Preprod](https://img.shields.io/badge/Network-Midnight%20Preprod-00E5FF?style=for-the-badge&logo=shield)](https://midnight.network)
 [![Compact Circuit](https://img.shields.io/badge/Smart%20Contract-Compact%20v0.20-70FFBE?style=for-the-badge)](https://docs.midnight.network)
 [![Level 3 Compliant](https://img.shields.io/badge/Compliance-Level%203%20dApp-05DF85?style=for-the-badge)](https://midnight.network)
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20Passing-success?style=for-the-badge&logo=githubactions)](https://github.com/nitinkapoor009988-cloud/StealthPay/actions)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20Passing-success?style=for-the-badge&logo=githubactions)](https://github.com/prashant45667/StealthPay/actions)
 
 > 🚀 **Live dApp Website**: **[https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/)**  
 > 📹 **Interactive Demo Video**: **[https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69)**
@@ -220,7 +220,7 @@ StealthPay/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/nitinkapoor009988-cloud/StealthPay.git
+git clone https://github.com/prashant45667/StealthPay.git
 cd StealthPay
 ```
 
@@ -281,9 +281,9 @@ Every commit and pull request triggers an automated GitHub Actions pipeline (`.g
 
 | Field | Details |
 |---|---|
-| **Author / Developer** | [Nitin Kapoor (nitinkapoor009988-cloud)](https://github.com/nitinkapoor009988-cloud) |
-| **GitHub Profile** | [https://github.com/nitinkapoor009988-cloud](https://github.com/nitinkapoor009988-cloud) |
-| **Project Repository** | [https://github.com/nitinkapoor009988-cloud/StealthPay](https://github.com/nitinkapoor009988-cloud/StealthPay) |
+| **Author / Developer** | [prashant45667](https://github.com/prashant45667) |
+| **GitHub Profile** | [https://github.com/prashant45667](https://github.com/prashant45667) |
+| **Project Repository** | [https://github.com/prashant45667/StealthPay](https://github.com/prashant45667/StealthPay) |
 | **Live Web App (Vercel)** | [https://stealth-pay-flame.vercel.app/](https://stealth-pay-flame.vercel.app/) |
 | **Demo Video Walkthrough** | [https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69) |
 | **Target Network** | Midnight Preprod Testnet |
@@ -294,6 +294,6 @@ Every commit and pull request triggers an automated GitHub Actions pipeline (`.g
 
 ## 🛡️ License
 
-MIT License — Developed for the Midnight Network Ecosystem by [nitinkapoor009988-cloud](https://github.com/nitinkapoor009988-cloud).
+MIT License — Developed for the Midnight Network Ecosystem by [prashant45667](https://github.com/prashant45667).
 
 
