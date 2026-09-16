@@ -153,7 +153,7 @@ export const TransactionLog: React.FC<TransactionLogProps> = ({ history }) => {
                   {/* Explorer Link */}
                   <td className="py-3.5 px-4 text-right">
                     <a
-                      href={`https://preprod.midnight.network/tx/${batch.txHash}`}
+                      href={`https://preprod.midnightexplorer.com/tx/${batch.txHash}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center space-x-1 text-onyx-400 hover:text-emerald-neon transition"

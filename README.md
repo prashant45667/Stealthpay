@@ -21,11 +21,11 @@
 | **Contract Name** | `StealthPayProtocol` |
 | **Live Web Application** | **[https://vercel.com/prashantgond/stealthpay](https://vercel.com/prashantgond/stealthpay)** |
 | **Demo Video Walkthrough** | **[https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69)** |
-| **Contract Address (Preprod)** | [`c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9`](https://preprod.midnight.network/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |
+| **Contract Address (Preprod)** | [`c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9`](https://preprod.midnightexplorer.com/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |
 | **Target Network** | **Midnight Preprod Testnet** |
 | **Smart Contract Language** | **Midnight Compact (`v0.20+ / v0.31+`)** |
 | **ZK Proving Engine** | Halo2 / PLONK Zero-Knowledge Prover |
-| **Explorer Verification** | **[View Verified Contract on Midnight Preprod Explorer](https://preprod.midnight.network/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)** |
+| **Explorer Verification** | **[View Verified Contract on Midnight Preprod Explorer](https://preprod.midnightexplorer.com/contract/c39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)** |
 
 ---
 

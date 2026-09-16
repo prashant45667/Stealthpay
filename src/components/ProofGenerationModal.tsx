@@ -184,7 +184,7 @@ export const ProofGenerationModal: React.FC<ProofGenerationModalProps> = ({
 
             <div className="flex items-center justify-end space-x-3">
               <a
-                href={`https://preprod.midnight.network/tx/${txHash}`}
+                href={`https://preprod.midnightexplorer.com/tx/${txHash}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-full bg-onyx-900 hover:bg-onyx-800 text-onyx-300 hover:text-white text-xs font-mono border border-white/10 transition"
