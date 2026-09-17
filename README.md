@@ -4,13 +4,15 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-stealthpay.vercel.app-00FF9D?style=for-the-badge&logo=vercel)](https://vercel.com/prashantgond/stealthpay)
 [![Explorer Contract](https://img.shields.io/badge/Explorer-Preprod%20Contract-00E5FF?style=for-the-badge&logo=shield)](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)
+[![Twitter / X](https://img.shields.io/badge/X%20(Twitter)-@StealthPay__Web3-000000?style=for-the-badge&logo=x)](https://x.com/StealthPay_Web3)
 [![Demo Video](https://img.shields.io/badge/Demo%20Video-Watch%20Walkthrough-FF3366?style=for-the-badge&logo=googlephotos)](https://photos.app.goo.gl/fXJJMXqb31dTU2R69)
 [![Midnight Preprod](https://img.shields.io/badge/Network-Midnight%20Preprod-00E5FF?style=for-the-badge&logo=shield)](https://midnight.network)
 [![Compact Circuit](https://img.shields.io/badge/Smart%20Contract-Compact%20v0.20-70FFBE?style=for-the-badge)](https://docs.midnight.network)
-[![Level 3 Compliant](https://img.shields.io/badge/Compliance-Level%203%20dApp-05DF85?style=for-the-badge)](https://midnight.network)
+[![Level 4 Ready](https://img.shields.io/badge/Compliance-Level%204%20Product-05DF85?style=for-the-badge)](https://midnight.network)
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20Passing-success?style=for-the-badge&logo=githubactions)](https://github.com/prashant45667/StealthPay/actions)
 
 > 🚀 **Live dApp Website**: **[https://vercel.com/prashantgond/stealthpay](https://vercel.com/prashantgond/stealthpay)**  
+> 🐦 **Official X (Twitter)**: **[@StealthPay_Web3](https://x.com/StealthPay_Web3)**  
 > 🔍 **Midnight Preprod Explorer (Contract)**: **[https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)**  
 > 📹 **Interactive Demo Video**: **[https://photos.app.goo.gl/fXJJMXqb31dTU2R69](https://photos.app.goo.gl/fXJJMXqb31dTU2R69)**
 
@@ -21,6 +23,7 @@
 | Parameter | Value |
 |---|---|
 | **Contract Name** | `StealthPayProtocol` |
+| **Official X (Twitter)** | **[@StealthPay_Web3](https://x.com/StealthPay_Web3)** |
 | **Contract Address (Preprod)** | [`0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9`](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |
 | **Explorer Verification Link** | **[https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9)** |
 | **Live Web Application** | **[https://vercel.com/prashantgond/stealthpay](https://vercel.com/prashantgond/stealthpay)** |
@@ -143,14 +146,15 @@ StealthPay features a **FinTech Neon Emerald & Deep Charcoal Design System** (`#
 
 ---
 
-## 🏆 Level 3 Product Proposal (Hackathon Submission)
+## 🏆 Level 3 & Level 4 Product Proposal (Hackathon Submission)
 
 ### 1. Project Title
 **StealthPay: Confidential Split & Payroll Protocol on Midnight**
 
 ### 2. Category & Track
 - **Privacy-Preserving DeFi & Enterprise Tools**
-- **Midnight Network Level-3 Compliant Decentralized Application**
+- **Midnight Network Level-3 & Level-4 Compliant Decentralized Application**
+- **Official Product X (Twitter)**: [@StealthPay_Web3](https://x.com/StealthPay_Web3)
 
 ### 3. Problem Addressed
 Transparent public blockchains leak sensitive enterprise payroll and DAO compensation data, exposing team members to financial targeting and competitive espionage. Existing off-chain payroll tools lack cryptographic guarantees of solvency and non-custodial security.
@@ -286,6 +290,7 @@ Every commit and pull request triggers an automated GitHub Actions pipeline (`.g
 | **Author / Developer** | [prashant45667](https://github.com/prashant45667) |
 | **GitHub Profile** | [https://github.com/prashant45667](https://github.com/prashant45667) |
 | **Project Repository** | [https://github.com/prashant45667/Stealthpay](https://github.com/prashant45667/Stealthpay) |
+| **Official X (Twitter)** | [https://x.com/StealthPay_Web3](https://x.com/StealthPay_Web3) (`@StealthPay_Web3`) |
 | **Live Web App (Vercel)** | [https://vercel.com/prashantgond/stealthpay](https://vercel.com/prashantgond/stealthpay) |
 | **Midnight Preprod Explorer** | [https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |
 | **Contract ID (Preprod)** | [`0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9`](https://preprod.midnightexplorer.com/contracts/0xc39b21224fa89aa696ca1b733affe5bba23c6f35e1a05b634cc11cd34d37f4e9) |

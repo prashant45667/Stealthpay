@@ -276,7 +276,7 @@ export default function Home() {
             <span>Confidential Split & Payroll on Midnight Network</span>
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 sm:space-x-6 flex-wrap justify-center">
             <a
               href="https://github.com/prashant45667/StealthPay"
               target="_blank"
@@ -284,7 +284,21 @@ export default function Home() {
               className="hover:text-emerald-neon flex items-center space-x-1.5 transition text-onyx-300"
             >
               <Github className="w-4 h-4" />
-              <span>GitHub Repository</span>
+              <span>GitHub</span>
+            </a>
+
+            <span className="text-onyx-700">|</span>
+
+            <a
+              href="https://x.com/StealthPay_Web3"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white flex items-center space-x-1.5 transition text-onyx-300"
+            >
+              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span>@StealthPay_Web3</span>
             </a>
 
             <span className="text-onyx-700">|</span>
@@ -302,7 +316,7 @@ export default function Home() {
             <span className="text-onyx-700">|</span>
 
             <span className="text-emerald-neon px-2.5 py-1 rounded-full bg-emerald-neon/10 border border-emerald-neon/20 text-[10px]">
-              Level 3 Build
+              Level 4 Ready
             </span>
           </div>
         </div>
